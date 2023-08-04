@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:51:57 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/03 16:36:34 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/04 14:23:04 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ int	main(int argc, char **argv)
 	{
 		while (index != argc)
 		{
-			std::cout << ToUpperCase(argv[index]) << std::endl;
+			std::cout << ToUpperCase(argv[index]);
 			index++;
 		}
+		std::cout << std::endl;
 	}
 }
