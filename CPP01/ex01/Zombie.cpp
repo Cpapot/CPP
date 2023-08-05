@@ -6,15 +6,15 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:37:15 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 17:14:46 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/05 21:14:17 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Zombie.h"
 
 Zombie::~Zombie(void)
 {
-	cout << name << " is dead (it's tchao)" << endl;
+	cout << RED << name << " is dead (it's tchao)" << WHITE << endl;
 }
 
 string	Zombie::getName(void)
@@ -29,6 +29,6 @@ void	Zombie::setName(string newName)
 
 void	Zombie::announce(void)
 {
-	cout << name << ": BraiiiiiiinnnzzzZ..." << endl;
+	cout << BLUE << name << ": BraiiiiiiinnnzzzZ..." << WHITE << endl;
 }
 

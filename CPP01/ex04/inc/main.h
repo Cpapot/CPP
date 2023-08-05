@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 14:10:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 16:32:43 by cpapot           ###   ########.fr       */
+/*   Created: 2023/08/05 19:13:34 by cpapot            #+#    #+#             */
+/*   Updated: 2023/08/05 19:56:58 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-
-#include "Zombie.hpp"
-using namespace std;
+#ifndef MAIN_H
+# define MAIN_H
 
 # define RESET		"\001\x1b[0m\002"
 # define BLACK		"\001\x1b[30m\002"
@@ -26,6 +23,7 @@ using namespace std;
 # define CYAN		"\001\x1b[36m\002"
 # define WHITE		"\001\x1b[37m\002"
 
-Zombie* zombieHorde(int N, string name);
+# include "../inc/lib.h"
+# include "stream.hpp"
 
 #endif

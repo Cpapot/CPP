@@ -5,22 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 14:38:18 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 16:31:38 by cpapot           ###   ########.fr       */
+/*   Created: 2023/08/05 17:16:50 by cpapot            #+#    #+#             */
+/*   Updated: 2023/08/05 19:04:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "Zombie.h"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int	main(void)
+int main()
 {
-	Zombie	*horde = zombieHorde(10, "gerard");
-	for (int i = 0; i != 10; i++)
-		horde[i].announce();
-	Zombie *horde2 = zombieHorde(3, "GIMS");
-	for (int i = 0; i != 3; i++)
-		horde2[i].announce();
-	delete [] horde2;
-	delete [] horde;
+	{
+		Weapon club = Weapon("Excalibur");
+		HumanA bob("Arthur", club);
+		bob.attack();
+		club.setType("Broken Excalibur");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }

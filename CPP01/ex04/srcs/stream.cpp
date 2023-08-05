@@ -1,0 +1,81 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stream.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/05 19:55:12 by cpapot            #+#    #+#             */
+/*   Updated: 2023/08/05 21:00:44 by cpapot           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../inc/stream.hpp"
+
+//constructor
+stream::stream(char *path)
+{
+	string		out_path = string(path) + string(".replace");
+	in.open(path, ifstream::in);
+	if (in)
+		out.open(out_path.c_str(), ofstream::out);
+	end = false;
+}
+
+//destructor
+stream::~stream()
+{
+	in.close();
+	out.close();
+}
+
+//getters
+string	stream::getReadLine(void)
+{
+	return (line);
+}
+
+bool	stream::isFinish(void)
+{
+	return (end);
+}
+
+
+
+void	stream::replaceInLine(char *s1, char *s2)
+{
+	size_t	pos;
+	string	tmp;
+
+	tmp = line;
+	pos = line.find(s1);
+	while (pos != string::npos)
+	{
+		tmp.erase(pos, line.size() - pos);
+		line = tmp + string(s2) + line.erase(0, pos + string(s1).size());
+		tmp = line;
+		pos = line.find(s1);
+	}
+}
+
+int	stream::checkStream(void)
+{
+	if (!in)
+		return (1);
+	if (!out)
+		return (2);
+	return (0);
+}
+
+void	stream::readLine(void)
+{
+	if (!getline(in, line))
+		end = true;
+}
+
+void	stream::writeLine(void)
+{
+	out << line << endl;
+}
+
+

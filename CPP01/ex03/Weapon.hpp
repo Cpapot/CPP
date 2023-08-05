@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 14:10:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 16:32:43 by cpapot           ###   ########.fr       */
+/*   Created: 2023/08/05 16:56:15 by cpapot            #+#    #+#             */
+/*   Updated: 2023/08/05 18:54:03 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-#include "Zombie.hpp"
+# include <string>
+# include <iostream>
 using namespace std;
 
-# define RESET		"\001\x1b[0m\002"
-# define BLACK		"\001\x1b[30m\002"
-# define RED		"\001\x1b[31m\002"
-# define GREEN		"\001\x1b[32m\002"
-# define YELLOW		"\001\x1b[33m\002"
-# define BLUE		"\001\x1b[34m\002"
-# define MAGENTA	"\001\x1b[35m\002"
-# define CYAN		"\001\x1b[36m\002"
-# define WHITE		"\001\x1b[37m\002"
+class Weapon
+{
+private:
+	string	type;
+public:
+	void	setType(string newType);
+	string	getType(void);
+	Weapon(string newWeapon);
+};
 
-Zombie* zombieHorde(int N, string name);
+void	Weapon::setType(string newType)
+{
+	type = newType;
+}
+
+string Weapon::getType(void)
+{
+	return (type);
+}
+Weapon::Weapon(string newWeapon)
+{
+	type = newWeapon;
+}
 
 #endif

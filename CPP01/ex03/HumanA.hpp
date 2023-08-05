@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 14:38:18 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 16:31:38 by cpapot           ###   ########.fr       */
+/*   Created: 2023/08/05 17:03:12 by cpapot            #+#    #+#             */
+/*   Updated: 2023/08/05 19:01:40 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "Zombie.h"
+#ifndef HUMAN_A_HPP
+# define HUMAN_A_HPP
 
-int	main(void)
+#include "Weapon.hpp"
+
+class HumanA
 {
-	Zombie	*horde = zombieHorde(10, "gerard");
-	for (int i = 0; i != 10; i++)
-		horde[i].announce();
-	Zombie *horde2 = zombieHorde(3, "GIMS");
-	for (int i = 0; i != 3; i++)
-		horde2[i].announce();
-	delete [] horde2;
-	delete [] horde;
+private:
+	string	name;
+	Weapon	*type;
+public:
+	void	attack(void);
+	HumanA(string newName, Weapon& newType);
+};
+
+void	HumanA::attack(void)
+{
+	cout << name << " attacks with their " << type->getType() << endl;
 }
+
+HumanA::HumanA(string newName, Weapon& newType)
+{
+	name = newName;
+	type = &newType;
+}
+
+#endif
