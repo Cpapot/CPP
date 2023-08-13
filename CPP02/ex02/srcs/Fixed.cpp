@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/13 10:26:45 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/13 11:00:31 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ Fixed::Fixed(void)
 {
 	cout << "Constructor called" << endl;
 	FixedNb = 0;
+}
+
+inline bool		Fixed::operator<(const Fixed& r)
+{
+	return (this->toFloat() < r.toFloat());
 }
 
 ostream&	operator<<(ostream& os, const Fixed &src)
