@@ -6,13 +6,14 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:28 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/13 10:57:02 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/14 18:14:04 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 
 #include <iostream>
+
 int main( void )
 {
 	Fixed a;
@@ -20,8 +21,7 @@ int main( void )
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 
-	bool	test = b < c;
-	a = Fixed( 1234.4321f );
+	a = c++;
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;

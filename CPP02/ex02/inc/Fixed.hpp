@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:51 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/13 10:59:36 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/14 18:18:37 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,19 @@ public:
 
 	//operator
 	void			operator=(const Fixed &);
+	Fixed			operator+(const Fixed &) const;
+	Fixed			operator-(const Fixed &) const;
+	Fixed			operator*(const Fixed &) const;
+	Fixed			operator/(const Fixed &) const;
+	Fixed			operator++(int) const;
+	Fixed&			operator++() const;
 
-	inline bool		operator<(const Fixed& r);
+	bool			operator<(const Fixed& r) const;
+	bool			operator>(const Fixed& r) const;
+	bool			operator<=(const Fixed& r) const;
+	bool			operator>=(const Fixed& r) const;
+	bool			operator==(const Fixed& r) const;
+	bool			operator!=(const Fixed& r) const;
 
 	friend ostream&	operator<<(ostream& os, const Fixed &);
 
