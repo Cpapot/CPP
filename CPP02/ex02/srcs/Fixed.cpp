@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/14 18:24:19 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/26 19:00:47 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,16 +92,17 @@ Fixed	Fixed::operator/(const Fixed& l) const
 	return (tmp);
 }
 
-Fixed&	Fixed::operator++() const
+Fixed	Fixed::operator++(void)
 {
-	Fixed	tmp(roundf((this->toFloat() + 1) * (1 << bitSize)));
-	return (tmp);
+	Fixed tmp(this->toFloat() + 1);
+	*this = tmp;
+	return (*this);
 }
 
-Fixed	Fixed::operator++(int) const
+Fixed	Fixed::operator++(int)
 {
 	Fixed	cpy(*this);
-	++(*this);
+	operator++();
 	return (cpy);
 }
 

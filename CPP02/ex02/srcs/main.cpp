@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:28 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/14 18:14:04 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/26 19:01:16 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 int main( void )
 {
 	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed b( 10 );
+	Fixed c( 42.42f );
+	Fixed d( b );
+
 
 	a = c++;
 

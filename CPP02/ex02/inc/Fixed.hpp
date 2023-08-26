@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:51 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/14 18:18:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/26 18:53:43 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ public:
 	Fixed			operator-(const Fixed &) const;
 	Fixed			operator*(const Fixed &) const;
 	Fixed			operator/(const Fixed &) const;
-	Fixed			operator++(int) const;
-	Fixed&			operator++() const;
+	Fixed			operator++(int);
+	Fixed			operator++(void);
 
 	bool			operator<(const Fixed& r) const;
 	bool			operator>(const Fixed& r) const;
