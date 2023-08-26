@@ -11,7 +11,10 @@ NAME		=	PhoneBook
 
 # --------------- FILES --------------- #
 
-LIST_SRC	=	main.cpp
+LIST_SRC	=	main.cpp	\
+				Contact.cpp	\
+				PhoneBook.cpp \
+				SecureString.cpp
 
 # ------------ DIRECTORIES ------------ #
 

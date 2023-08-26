@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:03:20 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/04 18:30:07 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/26 17:43:57 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@
 #include <limits>
 #include <iomanip>
 #include <stdlib.h>
+
+std::string		getSecureNumber(std::string name);
+std::string		getSecureString(std::string name);
 
 #endif

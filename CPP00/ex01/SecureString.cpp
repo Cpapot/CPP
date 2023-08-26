@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SecureString.hpp                                   :+:      :+:    :+:   */
+/*   SecureString.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 17:01:42 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/04 18:13:01 by cpapot           ###   ########.fr       */
+/*   Created: 2023/08/26 17:39:13 by cpapot            #+#    #+#             */
+/*   Updated: 2023/08/26 17:47:41 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SECURE_STRING_HPP
-
-# define SECURE_STRING_HPP
-
 #include "inc.h"
 
-class SecureString
-{
-private:
-	bool			isStringDigit(std::string str);
-public:
-	std::string		getSecureNumber(std::string name);
-	std::string		getSecureString(std::string name);
-};
-
-bool	isStringDigit(std::string str)
+static bool	isStringDigit(std::string str)
 {
 	int	i = 0;
 
@@ -46,11 +33,13 @@ std::string		getSecureNumber(std::string name)
 	{
 		std::cout << name << " : ";
 		std::getline(std::cin, str);
-		if (str.empty() || !isStringDigit(str))
+		if ((str.empty() || !isStringDigit(str)) && !std::cin.eof())
 		{
 			std::cin.clear();
 			std::cout << "Enter a Valid Number" << std::endl;
 		}
+		else if (std::cin.eof())
+			exit(0);
 		else
 			break;
 	} while (1);
@@ -65,12 +54,13 @@ std::string	getSecureString(std::string name)
 	{
 		std::cout << name << " : ";
 		std::getline(std::cin, result);
-		if (result.empty())
+		if (result.empty() && !std::cin.eof())
 		{
 			std::cin.clear();
 			std::cout << name << " can't be empty" << std::endl;
 		}
+		else if (std::cin.eof())
+			exit(0);
 	} while (result.empty());
 	return (result);
 }
-#endif
