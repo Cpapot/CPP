@@ -6,29 +6,18 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:51:57 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/04 14:23:04 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/26 17:37:46 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-char	*ToUpperCase(char *str)
-{
-	int	index = 0;
-
-	while (str[index])
-	{
-		if (str[index] >= 97 && str[index] <= 122)
-			str[index] -= 32;
-		index++;
-	}
-	return (str);
-
-}
+#include <cstring>
+#include <string>
+#include <algorithm>
 
 int	main(int argc, char **argv)
 {
-	int	index = 1;
+	int			index = 1;
 
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -36,7 +25,10 @@ int	main(int argc, char **argv)
 	{
 		while (index != argc)
 		{
-			std::cout << ToUpperCase(argv[index]);
+			for (size_t y = 0; y != strlen(argv[index]); y++)
+			{
+				std::cout << (char)std::toupper(argv[index][y]);
+			}
 			index++;
 		}
 		std::cout << std::endl;
