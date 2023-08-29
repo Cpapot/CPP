@@ -20,7 +20,6 @@ class Fixed
 private:
 	int					FixedNb;
 	static const int	bitSize = 8;
-	//int32_t	floatToBinary(void const * const ptr);
 
 public:
 	//cpy
@@ -32,8 +31,11 @@ public:
 	Fixed			operator-(const Fixed &) const;
 	Fixed			operator*(const Fixed &) const;
 	Fixed			operator/(const Fixed &) const;
+
 	Fixed			operator++(int);
 	Fixed			operator++(void);
+    Fixed			operator--(int);
+    Fixed			operator--(void);
 
 	bool			operator<(const Fixed& r) const;
 	bool			operator>(const Fixed& r) const;
@@ -56,6 +58,13 @@ public:
 
 	int		toInt(void) const;
 	float	toFloat(void) const;
+
+    //function
+
+    static Fixed   &min(Fixed &nb1, Fixed &nb2);
+    static const Fixed   &min(const Fixed &nb1, const Fixed &nb2);
+    static Fixed   &max(Fixed &nb1, Fixed &nb2);
+    static const Fixed   &max(const Fixed &nb1, const Fixed &nb2);
 };
 
 #endif
