@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 17:38:26 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/31 14:46:55 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/08/31 15:55:50 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	PhoneBook::Search(int size)
 	int			id;
 	std::string	str;
 
-	for (int index = 0; index < size; index++)
-		contactArr[index].printContact(index);
+	for (int index = 0; index < size && index < 8; index++)
+		contactArr[index].printContact((index) + 1);
 	str = getSecureNumber("Index of Contact");
 	id = std::atoi(str.c_str());
 	if (id <= 0 || id > 8)
