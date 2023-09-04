@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 17:03:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/04 15:17:19 by cpapot           ###   ########.fr       */
+/*   Created: 2023/09/04 15:17:47 by cpapot            #+#    #+#             */
+/*   Updated: 2023/09/04 15:25:22 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-# define HUMAN_A_HPP
+#include "HumanB.hpp"
 
-#include "Weapon.hpp"
-
-class HumanA
+void	HumanB::attack(void)
 {
-private:
-	std::string	name;
-	Weapon	*type;
-public:
-	void	attack(void);
-	HumanA(std::string newName, Weapon& newType);
-};
+	if (type != NULL)
+		std::cout << name << " attacks with their " << type->getType() << std::endl;
+	else
+		std::cout << name << "  tries to attack, but remembers he has no weapons" << std::endl;
+}
 
-#endif
+void	HumanB::setWeapon(Weapon& newWeapon)
+{
+	type = &newWeapon;
+}
+
+HumanB::HumanB(std::string newName)
+{
+	name = newName;
+	type = NULL;
+}

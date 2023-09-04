@@ -11,7 +11,10 @@ NAME		=	VIOLENCE
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp
+LIST_SRC		=	main.cpp \
+					HumanA.cpp \
+					HumanB.cpp \
+					Weapon.cpp
 
 # ------------ DIRECTORIES ------------ #
 

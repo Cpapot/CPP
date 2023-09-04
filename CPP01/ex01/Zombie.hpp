@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:49:36 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 14:37:35 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:26:22 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 
 # include <string>
 # include <iostream>
-using namespace std;
 
 class Zombie
 {
 private:
-	string	name;
+	std::string	name;
 public:
 	void	announce(void);
-	void	setName(string name);
-	string	getName(void);
+	void	setName(std::string name);
+	std::string	getName(void);
 	~Zombie(void);
 };
 

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:10:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 16:32:43 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:12:00 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ZOMBIE_H
 
 #include "Zombie.hpp"
-using namespace std;
 
 # define RESET		"\001\x1b[0m\002"
 # define BLACK		"\001\x1b[30m\002"
@@ -26,6 +25,6 @@ using namespace std;
 # define CYAN		"\001\x1b[36m\002"
 # define WHITE		"\001\x1b[37m\002"
 
-Zombie* zombieHorde(int N, string name);
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

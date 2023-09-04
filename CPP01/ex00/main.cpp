@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 17:03:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/04 15:17:19 by cpapot           ###   ########.fr       */
+/*   Created: 2023/08/05 14:38:18 by cpapot            #+#    #+#             */
+/*   Updated: 2023/09/04 15:07:32 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-# define HUMAN_A_HPP
+#include "Zombie.h"
 
-#include "Weapon.hpp"
-
-class HumanA
+int main(void)
 {
-private:
-	std::string	name;
-	Weapon	*type;
-public:
-	void	attack(void);
-	HumanA(std::string newName, Weapon& newType);
-};
+	Zombie z1("Sheesh");
+	Zombie *z2 = newZombie("ekip");
 
-#endif
+	z1.announce();
+	randomChump("le boss");
+	z2->announce();
+	delete z2;
+}

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 16:56:15 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 18:54:03 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:15:32 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,15 @@
 
 # include <string>
 # include <iostream>
-using namespace std;
 
 class Weapon
 {
 private:
-	string	type;
+	std::string	type;
 public:
-	void	setType(string newType);
-	string	getType(void);
-	Weapon(string newWeapon);
+	void	setType(std::string newType);
+	std::string	getType(void);
+	Weapon(std::string newWeapon);
 };
-
-void	Weapon::setType(string newType)
-{
-	type = newType;
-}
-
-string Weapon::getType(void)
-{
-	return (type);
-}
-Weapon::Weapon(string newWeapon)
-{
-	type = newWeapon;
-}
 
 #endif

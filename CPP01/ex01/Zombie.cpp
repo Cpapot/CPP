@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:37:15 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 21:14:17 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:11:54 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 Zombie::~Zombie(void)
 {
-	cout << RED << name << " is dead (it's tchao)" << WHITE << endl;
+	std::cout << RED << name << " is dead (it's tchao)" << WHITE << std::endl;
 }
 
-string	Zombie::getName(void)
+std::string	Zombie::getName(void)
 {
 	return (name);
 }
 
-void	Zombie::setName(string newName)
+void	Zombie::setName(std::string newName)
 {
 	name = newName;
 }
 
 void	Zombie::announce(void)
 {
-	cout << BLUE << name << ": BraiiiiiiinnnzzzZ..." << WHITE << endl;
+	std::cout << BLUE << name << ": BraiiiiiiinnnzzzZ..." << WHITE << std::endl;
 }
 

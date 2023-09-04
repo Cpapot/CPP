@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 17:16:50 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 19:04:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:22:19 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int main()
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
-		jim.setWeapon(club);
 		jim.attack();
+		jim.setWeapon(club);
 		club.setType("some other type of club");
 		jim.attack();
 	}

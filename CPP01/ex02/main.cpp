@@ -6,25 +6,24 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 16:39:17 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 16:53:19 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:13:17 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <string>
 # include <iostream>
-using namespace std;
 
 int	main(void)
 {
-	string	str = "HI THIS IS BRAIN";
-	string	*stringPTR = &str;
-	string&	stringREF = str;
+	std::string		str = "HI THIS IS BRAIN";
+	std::string		*stringPTR = &str;
+	std::string&	stringREF = str;
 
-	cout <<  &str << endl;
-	cout << stringPTR << endl;
-	cout << &stringREF << endl << endl;
+	std::cout <<  &str << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl << std::endl;
 
-	cout << str << endl;
-	cout << *stringPTR << endl;
-	cout << stringREF << endl;
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 }

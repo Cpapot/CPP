@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:10:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 14:39:04 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 14:33:27 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define ZOMBIE_H
 
 #include "Zombie.hpp"
-using namespace std;
 
-Zombie	*newZombie(string name);
-void	randomChump(string name);
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif

@@ -6,15 +6,15 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 19:08:15 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 21:07:40 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 17:07:17 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/main.h"
 
-int	error(string error_written)
+int	error(std::string error_written)
 {
-	cout << RED << error_written << WHITE << endl;
+	std::cout << RED << error_written << WHITE << std::endl;
 	return (1);
 }
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 		file.replaceInLine(argv[2], argv[3]);
 		file.writeLine();
 	}
-	cout << GREEN << "Job done 👍" << WHITE << endl;
+	std::cout << GREEN << "Job done 👍" << WHITE << std::endl;
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 17:03:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/05 19:03:12 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:18:05 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,12 @@
 class HumanB
 {
 private:
-	string	name;
+	std::string	name;
 	Weapon	*type;
 public:
 	void	setWeapon(Weapon& newWeapon);
 	void	attack(void);
-	HumanB(string newName);
+	HumanB(std::string newName);
 };
-
-void	HumanB::attack(void)
-{
-	cout << name << " attacks with their " << type->getType() << endl;
-}
-
-void	HumanB::setWeapon(Weapon& newWeapon)
-{
-	type = &newWeapon;
-}
-
-HumanB::HumanB(string newName)
-{
-	name = newName;
-	type = NULL;
-}
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:57:14 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/06 18:58:46 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:29:34 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	Harl::complain(string level)
 	complain_map["ERROR"] = &Harl::error;
 	if (complain_map.find(level) != complain_map.end())
 	{
-		complain_type = complain_map[level];
-		(this->*complain_type)();
+
 	}
 }
