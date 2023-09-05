@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 19:55:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/05 15:29:47 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/05 18:17:39 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,20 @@ bool	stream::isFinish(void)
 
 void	stream::replaceInLine(char *s1, char *s2)
 {
-	size_t	pos;
-	//size_t	min_pos = 0;
-	std::string	tmp2("");
-	std::string	tmp;
+	size_t			pos;
+	std::string		newline;
+	std::string		tmp;
 
-	tmp = line;
 	pos = line.find(s1);
 	while (pos != std::string::npos)
 	{
-		pos = line.find(s1);
-		line.replace(pos, std::string(s2));
-		/*tmp.erase(pos, line.size() - pos);
-		tmp = tmp + std::string(s2);
-		line.erase(0, pos + std::string(s1).size());
-		tmp2 += tmp;
 		tmp = line;
-		pos = line.find(s1);*/
+		line.erase(0, std::string(s1).length() + pos);
+		newline += tmp.substr(0, pos) + std::string(s2);
+		pos = line.find(s1);
 	}
-	//line = tmp2;
+	newline += line;
+	line = newline;
 }
 
 int	stream::checkStream(void)
@@ -81,6 +76,5 @@ void	stream::readLine(void)
 
 void	stream::writeLine(void)
 {
-	out.write(line.c_str(), line.size());
-	std::cout << line << std::endl;
+	out << line << std::endl;
 }
