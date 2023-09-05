@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 19:55:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/04 17:16:28 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/05 15:29:47 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 //constructor
 stream::stream(char *path)
 {
-	string		out_path = string(path) + string(".replace");
-	in.open(path, ifstream::in);
+	std::string		out_path = std::string(path) + std::string(".replace");
+	in.open(path, std::ifstream::in);
 	if (in)
-		out.open(out_path.c_str(), ofstream::out);
+		out.open(out_path.c_str(), std::ofstream::out);
 	end = false;
 }
 
@@ -52,14 +52,16 @@ void	stream::replaceInLine(char *s1, char *s2)
 	pos = line.find(s1);
 	while (pos != std::string::npos)
 	{
-		tmp.erase(pos, line.size() - pos);
+		pos = line.find(s1);
+		line.replace(pos, std::string(s2));
+		/*tmp.erase(pos, line.size() - pos);
 		tmp = tmp + std::string(s2);
 		line.erase(0, pos + std::string(s1).size());
 		tmp2 += tmp;
 		tmp = line;
-		pos = line.find(s1);
+		pos = line.find(s1);*/
 	}
-	line = tmp2;
+	//line = tmp2;
 }
 
 int	stream::checkStream(void)
@@ -79,5 +81,6 @@ void	stream::readLine(void)
 
 void	stream::writeLine(void)
 {
+	out.write(line.c_str(), line.size());
 	std::cout << line << std::endl;
 }
