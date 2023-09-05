@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:57:16 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/05 18:26:16 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/05 20:14:01 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,43 @@ void killHarl(int sig)
 	_exit(0);
 }
 
-int main()
+int main(int argc, char **argv)
 {
-	int		HarlAlive = 1;
-	Harl	sheesh;
+	int				filter;
+	Harl			sheesh;
 
+	if (argc == 1)
+		filter = sheesh.findFilter("");
+	else
+		filter = sheesh.findFilter(std::string(argv[1]));
 	signal(SIGINT, killHarl);
-	while (HarlAlive)
+	while (filter != 5)
 	{
-		sheesh.complain("DEBUG");
-		sleep(1);
-		sheesh.complain("INFO");
-		sleep(1);
-		sheesh.complain("WARNING");
-		sleep(1);
-		sheesh.complain("ERROR");
-		sleep(1);
+		switch (filter)
+		{
+			case 0:
+				std::cout << "nothing" << std::endl;
+				filter = 5;
+				break;
+			case 1:
+				sheesh.complain("DEBUG");
+				filter++;
+				sleep(1);
+				break;
+			case 2:
+				sheesh.complain("INFO");
+				filter++;
+				sleep(1);
+				break;
+			case 3:
+				sheesh.complain("WARNING");
+				filter++;
+				sleep(1);
+				break;
+			case 4:
+				sheesh.complain("ERROR");
+				filter++;
+				break;
+		}
 	}
 }

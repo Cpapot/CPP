@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:57:14 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/05 18:29:04 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/05 20:03:48 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,21 @@ void	Harl::warning(void)
 void	Harl::error(void)
 {
 	std::cout << RED << "This is unacceptable ! I want to speak to the manager now." << std::endl;
+}
+
+int		Harl::findFilter(std::string filter)
+{
+	std::map<std::string, int>	filter_map;
+
+	filter_map[""] = 1;
+	filter_map["DEBUG"] = 1;
+	filter_map["INFO"] = 2;
+	filter_map["WARNING"] = 3;
+	filter_map["ERROR"] = 4;
+	if (filter_map.find(filter) == filter_map.end())
+		return (0);
+	else
+		return (filter_map[filter]);
 }
 
 void	Harl::complain(std::string level)

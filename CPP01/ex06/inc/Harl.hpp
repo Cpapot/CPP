@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:57:11 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/05 18:24:11 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/05 19:11:03 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ private:
 	void	error(void);
 public:
 	void	complain(std::string level);
+	int		findFilter(std::string filter);
 };
 
 #endif
