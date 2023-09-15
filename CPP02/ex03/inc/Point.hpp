@@ -1,19 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 17:42:15 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/15 15:15:42 by cpapot           ###   ########.fr       */
+/*   Created: 2023/09/15 15:48:37 by cpapot            #+#    #+#             */
+/*   Updated: 2023/09/15 17:58:24 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FIXED_H
-# define	FIXED_H
+#include "../inc/Fixed.hpp"
 
-#include <string>
-#include <iostream>
+class Point
+{
+private:
+	Fixed const	_x;
+	Fixed const	_y;
+public:
+	// constructor
+	Point(void);
+	Point(float const x_pos, float const y_pos);
 
-#endif
+	// cpy
+	Point(const Point &cpy);
+
+	//operator
+	void		operator=(Point const &);
+
+	//destructor
+	~Point();
+
+	//getters
+	Fixed	getx(void);
+	Fixed	gety(void);
+
+	//function
+	void	printCoord(std::string id);
+};

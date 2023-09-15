@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:42:15 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/13 13:56:44 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/15 15:23:37 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@
 # include <string>
 # include <iostream>
 # include <cmath>
-using namespace std;
 
 #endif

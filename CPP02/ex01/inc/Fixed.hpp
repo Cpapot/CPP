@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:51 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/13 10:28:13 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/15 15:15:56 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	//operator
 	void		operator=(const Fixed &);
 
-	friend ostream&	operator<<(ostream& os, const Fixed &);
+	friend std::ostream&	operator<<(std::ostream& os, const Fixed &);
 
 	//construct & destruct
 	Fixed(void);

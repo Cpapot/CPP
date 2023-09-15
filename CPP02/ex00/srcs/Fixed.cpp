@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/09 22:00:34 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/15 15:05:59 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,36 @@
 
 void	Fixed::setRawBits(const int raw)
 {
+	std::cout << "set raw bits called" << std::endl;
 	FixedNb = raw;
 }
 
 int	Fixed::getRawBits(void)
 {
+	std::cout << "get raw bits called" << std::endl;
 	return (FixedNb);
 }
 
 void	Fixed::operator=(const Fixed &src)
 {
-	cout << "= operator called" << endl;
+	std::cout << "= operator called" << std::endl;
 	FixedNb = src.FixedNb;
 }
 
 Fixed::Fixed (const Fixed &cpy)
 {
-	cout << "Copy called" << endl;
+	std::cout << "Copy called" << std::endl;
 	FixedNb = cpy.FixedNb;
 }
 
 Fixed::Fixed(void)
 {
-	cout << "Constructor called" << endl;
+	std::cout << "Constructor called" << std::endl;
 	FixedNb = 0;
 }
 
 Fixed::~Fixed()
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 }
 

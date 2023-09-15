@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/13 10:26:45 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/15 15:21:21 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,43 @@
 
 Fixed::Fixed(const float nb)
 {
-	cout << "float constructor called" << endl;
+	std::cout << "float constructor called" << std::endl;
 	FixedNb = (nb * (1 << bitSize));
 }
 
 Fixed::Fixed(const int nb)
 {
-	cout << "int constructor called" << endl;
+	std::cout << "int constructor called" << std::endl;
 	FixedNb = (nb * (1 << bitSize));
 }
 
 Fixed::Fixed(void)
 {
-	cout << "Constructor called" << endl;
+	std::cout << "Constructor called" << std::endl;
 	FixedNb = 0;
 }
 
-ostream&	operator<<(ostream& os, const Fixed &src)
+std::ostream&	operator<<(std::ostream& os, const Fixed &src)
 {
-	cout << "<< operator called" << endl;
-
 	os << src.toFloat();
 	return (os);
 }
 
 void	Fixed::operator=(const Fixed &src)
 {
-	cout << "= operator called" << endl;
+	std::cout << "= operator called" << std::endl;
 	FixedNb = src.FixedNb;
 }
 
 Fixed::Fixed (const Fixed &cpy)
 {
-	cout << "Copy called" << endl;
+	std::cout << "Copy called" << std::endl;
 	FixedNb = cpy.FixedNb;
 }
 
 Fixed::~Fixed()
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 void	Fixed::setRawBits(const int raw)
@@ -67,12 +65,10 @@ int	Fixed::getRawBits(void)
 
 int	Fixed::toInt(void) const
 {
-	cout << "to int called" << endl;
 	return (FixedNb >> bitSize);
 }
 
 float	Fixed::toFloat(void) const
 {
-	cout << "to float called" << endl;
 	return ((double)FixedNb / (double)(1 << bitSize));
 }

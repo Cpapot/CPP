@@ -12,7 +12,9 @@ NAME		=	Fixed
 # --------------- FILES --------------- #
 
 LIST_SRC		=	Fixed.cpp	\
-					main.cpp
+					main.cpp	\
+					bsp.cpp		\
+					Point.cpp
 
 # ------------ DIRECTORIES ------------ #
 

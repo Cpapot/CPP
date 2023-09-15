@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 17:40:51 by cpapot            #+#    #+#             */
-/*   Updated: 2023/08/26 18:53:43 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/15 15:27:46 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
 
 	Fixed			operator++(int);
 	Fixed			operator++(void);
-    Fixed			operator--(int);
-    Fixed			operator--(void);
+	Fixed			operator--(int);
+	Fixed			operator--(void);
 
 	bool			operator<(const Fixed& r) const;
 	bool			operator>(const Fixed& r) const;
@@ -44,7 +44,7 @@ public:
 	bool			operator==(const Fixed& r) const;
 	bool			operator!=(const Fixed& r) const;
 
-	friend ostream&	operator<<(ostream& os, const Fixed &);
+	friend std::ostream&	operator<<(std::ostream& os, const Fixed &);
 
 	//construct & destruct
 	Fixed(void);
@@ -56,15 +56,13 @@ public:
 	int		getRawBits(void);
 	void	setRawBits(const int raw);
 
-	int		toInt(void) const;
-	float	toFloat(void) const;
-
-    //function
-
-    static Fixed   &min(Fixed &nb1, Fixed &nb2);
-    static const Fixed   &min(const Fixed &nb1, const Fixed &nb2);
-    static Fixed   &max(Fixed &nb1, Fixed &nb2);
-    static const Fixed   &max(const Fixed &nb1, const Fixed &nb2);
+	//function
+	int					toInt(void) const;
+	float				toFloat(void) const;
+	static Fixed		&min(Fixed &nb1, Fixed &nb2);
+	static const Fixed	&min(const Fixed &nb1, const Fixed &nb2);
+	static Fixed		&max(Fixed &nb1, Fixed &nb2);
+	static const Fixed	&max(const Fixed &nb1, const Fixed &nb2);
 };
 
 #endif
