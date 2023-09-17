@@ -11,7 +11,8 @@ NAME		=	ClapTrap
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp
+LIST_SRC		=	main.cpp	\
+					ClapTrap.cpp
 
 # ------------ DIRECTORIES ------------ #
 
