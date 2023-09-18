@@ -7,13 +7,14 @@ BLUE		=	\033[1;34m
 CYAN		=	\033[1;36m
 DEFAULT		=	\033[0m
 SUPPR		=	\r\033[2K
-NAME		=	ScavTrap
+NAME		=	FragTrap
 
 # --------------- FILES --------------- #
 
 LIST_SRC		=	main.cpp		\
 					ClapTrap.cpp	\
-					ScavTrap.cpp
+					ScavTrap.cpp	\
+					FrapTrap.cpp
 
 # ------------ DIRECTORIES ------------ #
 

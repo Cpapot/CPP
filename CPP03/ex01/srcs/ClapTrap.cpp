@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:52:06 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/17 14:53:53 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:57:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ ClapTrap::ClapTrap(std::string Name, unsigned int Attack)
 	_Health = 10;
 	_Energy = 10;
 	_Attack = Attack;
-	std::cout << _Name << " created with " << Attack << " Attack" << std::endl;
+	std::cout << "\033[1;32m[ClapTrap]\033[0m " << _Name << " created with " << Attack << " Attack" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string Name)
@@ -85,10 +85,10 @@ ClapTrap::ClapTrap(std::string Name)
 	_Health = 10;
 	_Energy = 10;
 	_Attack = 0;
-	std::cout << _Name << " Claptrap created." << std::endl;
+	std::cout << "\033[1;32m[ClapTrap]\033[0m " << _Name << " created." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << _Name << " Claptrap deleted." << std::endl;
+	std::cout << "\033[1;32m[ClapTrap]\033[0m " << _Name << " deleted." << std::endl;
 }

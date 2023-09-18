@@ -6,11 +6,17 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:52:06 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/18 14:57:36 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:56:10 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+void	ClapTrap::stats()
+{
+	std::cout << _Name << " have " << _Health << " health points, " << _Energy << \
+		" energy and " << _Attack << " attack damage." << std::endl;
+}
 
 void	ClapTrap::attack(const std::string& target)
 {
@@ -55,6 +61,15 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
+ClapTrap::ClapTrap()
+{
+	_Name = "<null>";
+	_Health = 10;
+	_Energy = 10;
+	_Attack = 0;
+	std::cout << "\033[1;32m[ClapTrap]\033[0m " << _Name << " created." << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string Name, unsigned int Attack)
 {
 	_Name = Name;
@@ -63,7 +78,6 @@ ClapTrap::ClapTrap(std::string Name, unsigned int Attack)
 	_Attack = Attack;
 	std::cout << "\033[1;32m[ClapTrap]\033[0m " << _Name << " created with " << Attack << " Attack" << std::endl;
 }
-
 
 ClapTrap::ClapTrap(std::string Name)
 {
