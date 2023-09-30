@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 18:58:37 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 18:58:54 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/30 22:14:29 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ std::string const & AMateria::getType() const
 	return (_type);
 }
 
+AMateria::~AMateria() {}
 AMateria::AMateria() {}
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const &type)
 {
 	_type = type;
 }

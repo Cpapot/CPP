@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 18:56:42 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 19:40:10 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/30 22:01:50 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 Character::Character(const Character &cpy)
 {
 	this->_name = cpy._name;
-	delete this->_inventory[0];
 	this->_inventory[0] = cpy._inventory[0];
-	delete this->_inventory[1];
 	this->_inventory[1] = cpy._inventory[1];
-	delete this->_inventory[2];
 	this->_inventory[2] = cpy._inventory[2];
-	delete this->_inventory[3];
 	this->_inventory[3] = cpy._inventory[3];
 }
 
@@ -48,8 +44,9 @@ void	Character::unequip(int idx)
 	if (_inventory[idx]->getType().compare("<null>"))
 		std::cout << "[unequip] Inventory slot already empty" << std::endl;
 	else
-		delete _inventory[idx];
+	{
 		_inventory[idx]->setType("<null>");
+	}
 }
 
 void	Character::equip(AMateria* m)
@@ -63,7 +60,6 @@ void	Character::equip(AMateria* m)
 		std::cout << "[equip] Inventory is full" << std::endl;
 		return ;
 	}
-	delete _inventory[index];
 	_inventory[index] = m->clone();
 }
 
@@ -88,8 +84,4 @@ Character::Character(std::string name)
 
 Character::~Character()
 {
-	delete this->_inventory[0];
-	delete this->_inventory[1];
-	delete this->_inventory[2];
-	delete this->_inventory[3];
 }

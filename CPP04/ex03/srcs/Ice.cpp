@@ -6,15 +6,15 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 18:58:06 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 19:14:10 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/30 22:12:46 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(const Ice &cpy)
+Ice::Ice(const Ice &cpy) : AMateria("ice")
 {
-	AMateria::_type = cpy.AMateria::_type;
+	*this = cpy;
 }
 
 AMateria*	Ice::clone(void) const
@@ -27,6 +27,7 @@ void	Ice::use(ICharacter& target)
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
+Ice::~Ice() {}
 Ice::Ice()
 {
 	AMateria::_type = "ice";

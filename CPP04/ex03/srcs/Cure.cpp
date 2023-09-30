@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 18:57:24 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 19:07:57 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/09/30 22:13:18 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	Cure::use(ICharacter& target)
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
 
-Cure::Cure(const Cure &cpy)
+Cure::Cure(const Cure &cpy) : AMateria("ice")
 {
-	AMateria::_type = cpy.AMateria::_type;
+	*this = cpy;
 }
 
 Cure::Cure()
 {
-	AMateria::_type = "cure";
+	_type = "cure";
 }
 
 Cure::~Cure()
