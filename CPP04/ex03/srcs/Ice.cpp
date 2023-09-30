@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 17:55:33 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 19:07:43 by cpapot           ###   ########.fr       */
+/*   Created: 2023/09/30 18:58:06 by cpapot            #+#    #+#             */
+/*   Updated: 2023/09/30 19:14:10 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_H
-# define ICE_H
+#include "Ice.hpp"
 
-#include "AMateria.hpp"
-
-class Ice: public AMateria
+Ice::Ice(const Ice &cpy)
 {
-public:
-	Ice(void);
-	~Ice();
-	Ice(const Ice &cpy);
+	AMateria::_type = cpy.AMateria::_type;
+}
 
-	AMateria*	clone(void) const;
-	void		use(ICharacter& target);
-};
+AMateria*	Ice::clone(void) const
+{
+	return new Ice(*this);
+}
 
-#endif
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+Ice::Ice()
+{
+	AMateria::_type = "ice";
+}

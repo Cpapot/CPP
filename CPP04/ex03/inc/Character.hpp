@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 17:55:33 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 19:07:43 by cpapot           ###   ########.fr       */
+/*   Created: 2023/09/30 18:07:09 by cpapot            #+#    #+#             */
+/*   Updated: 2023/09/30 19:15:27 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_H
-# define ICE_H
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
+#include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-class Ice: public AMateria
+class Character: public ICharacter
 {
+private:
+	std::string	_name;
+	AMateria	*_inventory[4];
 public:
-	Ice(void);
-	~Ice();
-	Ice(const Ice &cpy);
+	Character(void);
+	Character(const Character &cpy);
+	Character(std::string name);
+	~Character();
 
-	AMateria*	clone(void) const;
-	void		use(ICharacter& target);
+	std::string const &	getName() const;
+
+	void		equip(AMateria* m);
+	void		unequip(int idx);
+	void		use(int idx, ICharacter& target);
 };
 
 #endif

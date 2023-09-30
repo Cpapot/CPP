@@ -11,7 +11,11 @@ NAME		=	Abstract
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp
+LIST_SRC		=	main.cpp		\
+					Ice.cpp			\
+					Cure.cpp		\
+					Character.cpp	\
+					AMateria.cpp
 
 # ------------ DIRECTORIES ------------ #
 

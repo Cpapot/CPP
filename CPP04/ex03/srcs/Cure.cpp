@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 17:55:33 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/30 19:07:43 by cpapot           ###   ########.fr       */
+/*   Created: 2023/09/30 18:57:24 by cpapot            #+#    #+#             */
+/*   Updated: 2023/09/30 19:07:57 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_H
-# define ICE_H
+#include "Cure.hpp"
 
-#include "AMateria.hpp"
-
-class Ice: public AMateria
+AMateria*	Cure::clone(void) const
 {
-public:
-	Ice(void);
-	~Ice();
-	Ice(const Ice &cpy);
+	return new Cure(*this);
+}
 
-	AMateria*	clone(void) const;
-	void		use(ICharacter& target);
-};
+void	Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+}
 
-#endif
+Cure::Cure(const Cure &cpy)
+{
+	AMateria::_type = cpy.AMateria::_type;
+}
+
+Cure::Cure()
+{
+	AMateria::_type = "cure";
+}
+
+Cure::~Cure()
+{
+}
