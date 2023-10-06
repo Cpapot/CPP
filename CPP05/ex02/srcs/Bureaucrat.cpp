@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:08:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/06 23:32:15 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/07 00:09:14 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
 	}
 }
 
-std::string const	Bureaucrat::getName(void)
+std::string const	Bureaucrat::getName(void) const
 {
 	return (_name);
 }
 
-unsigned int		Bureaucrat::getGrade(void)
+const unsigned int		Bureaucrat::getGrade(void) const
 {
 	return (_grade);
 }

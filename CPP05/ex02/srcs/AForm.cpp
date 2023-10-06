@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:52:58 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/06 23:31:58 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/06 15:18:55 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-void	Form::beSigned(Bureaucrat &signatory)
+bool		AForm::checkBureaucratExec(Bureaucrat const & executor)
+{
+	if (executor.getGrade() > _execGrade || _signed)
+	{
+		std::cout << executor.getName() << " couldn’t execute Form because ";
+		if (_signed)
+		{
+			throw std::invalid_argument("Form::CantExecuteSigned");
+			std::cout << "it has already been signed" << std::endl;
+		}
+		else
+		{
+			throw std::invalid_argument("Form::GradeTooLowException");
+			std::cout << " his grade is to low" << std::endl;
+		}
+		return (false);
+	}
+	return (true);
+}
+
+void	AForm::beSigned(Bureaucrat &signatory)
 {
 	if (signatory.getGrade() <= _signedGrade && !_signed)
 	{
@@ -35,7 +55,7 @@ void	Form::beSigned(Bureaucrat &signatory)
 	}
 }
 
-std::ostream&	operator<<(std::ostream& os, const Form &src)
+std::ostream&	operator<<(std::ostream& os, const AForm &src)
 {
 	if (!src._signed)
 		os << "Form " << src._name << " is not signed and need a grade " << src._signedGrade << \
@@ -46,27 +66,38 @@ std::ostream&	operator<<(std::ostream& os, const Form &src)
 	return (os);
 }
 
-unsigned int		Form::getSignedGrade(void)
+unsigned int		AForm::getSignedGrade(void)
 {
 	return (_signedGrade);
 }
 
-unsigned int		Form::getExecGrade(void)
+unsigned int		AForm::getExecGrade(void)
 {
 	return (_execGrade);
 }
 
-bool				Form::isSigned(void)
+bool				AForm::isSigned(void)
 {
 	return (_signed);
 }
 
-const std::string	Form::getName(void)
+const std::string	AForm::getName(void)
 {
 	return (_name);
 }
 
-Form::Form(std::string name, unsigned int signedGrade, unsigned int execGrade): _name(name)
+void				AForm::setSignedGrade(unsigned int signedGrade)
+{
+	_signedGrade = signedGrade;
+}
+
+void				AForm::setExecGrade(unsigned int execGrade)
+{
+	_execGrade = execGrade;
+}
+
+
+AForm::AForm(std::string name, unsigned int signedGrade, unsigned int execGrade): _name(name)
 {
 	_signed = false;
 	if (signedGrade <= 0)
@@ -88,12 +119,17 @@ Form::Form(std::string name, unsigned int signedGrade, unsigned int execGrade): 
 
 }
 
-Form::Form(std::string name): _name(name)
+AForm::AForm(): _name("Form")
+{
+	_signed = false;
+}
+
+AForm::AForm(std::string name): _name(name)
 {
 	_signedGrade = 150;
 	_execGrade = 150;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 }
