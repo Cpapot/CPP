@@ -12,7 +12,8 @@ NAME		=	Exeption
 # --------------- FILES --------------- #
 
 LIST_SRC		=	main.cpp		\
-					Bureaucrat.cpp
+					Bureaucrat.cpp	\
+					Form.cpp
 
 # ------------ DIRECTORIES ------------ #
 
