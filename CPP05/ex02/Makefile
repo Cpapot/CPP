@@ -11,9 +11,12 @@ NAME		=	Exeption
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp		\
-					Bureaucrat.cpp	\
-					Form.cpp
+LIST_SRC		=	main.cpp					\
+					Bureaucrat.cpp				\
+					AForm.cpp					\
+					ShrubberyCreationForm.cpp	\
+					RobotomyRequestForm.cpp		\
+					PresidentialPardonForm.cpp	\
 
 # ------------ DIRECTORIES ------------ #
 

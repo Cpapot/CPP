@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/06 23:47:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/07 18:04:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <string>
 #include <iostream>
+
+class AForm;
 
 class Bureaucrat
 {
@@ -26,11 +28,13 @@ public:
 	~Bureaucrat();
 
 	const std::string			getName(void) const;
-	const unsigned int			getGrade(void) const;
+	unsigned int				getGrade(void) const;
 
 	friend std::ostream&		operator<<(std::ostream& os, const Bureaucrat &);
 	Bureaucrat					operator++(void);
 	Bureaucrat					operator++(int);
 	Bureaucrat					operator--(void);
 	Bureaucrat					operator--(int);
+
+	void						executeForm(AForm const & form);
 };

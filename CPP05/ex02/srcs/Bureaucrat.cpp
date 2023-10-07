@@ -6,11 +6,26 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:08:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/07 00:09:14 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/07 18:53:24 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+
+void			Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+		return ;
+	}
+	std::cout << _name << " executed " << form.getName() << std::endl;
+}
 
 std::ostream&	operator<<(std::ostream& os, const Bureaucrat &src)
 {
@@ -72,7 +87,7 @@ std::string const	Bureaucrat::getName(void) const
 	return (_name);
 }
 
-const unsigned int		Bureaucrat::getGrade(void) const
+unsigned int		Bureaucrat::getGrade(void) const
 {
 	return (_grade);
 }

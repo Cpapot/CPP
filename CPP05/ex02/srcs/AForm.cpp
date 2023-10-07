@@ -12,20 +12,20 @@
 
 #include "AForm.hpp"
 
-bool		AForm::checkBureaucratExec(Bureaucrat const & executor)
+bool		AForm::checkBureaucratExec(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > _execGrade || _signed)
 	{
-		std::cout << executor.getName() << " couldn’t execute Form because ";
+		std::cout << executor.getName() << " couldn’t execute " << _name << " because ";
 		if (_signed)
 		{
-			throw std::invalid_argument("Form::CantExecuteSigned");
 			std::cout << "it has already been signed" << std::endl;
+			throw std::invalid_argument("Form::CantExecuteSigned");
 		}
 		else
 		{
+			std::cout << "his grade is to low" << std::endl;
 			throw std::invalid_argument("Form::GradeTooLowException");
-			std::cout << " his grade is to low" << std::endl;
 		}
 		return (false);
 	}
@@ -81,7 +81,7 @@ bool				AForm::isSigned(void)
 	return (_signed);
 }
 
-const std::string	AForm::getName(void)
+const std::string	AForm::getName(void) const
 {
 	return (_name);
 }
@@ -96,6 +96,10 @@ void				AForm::setExecGrade(unsigned int execGrade)
 	_execGrade = execGrade;
 }
 
+void	AForm::setName(std::string name)
+{
+	const std::string _name = name;
+}
 
 AForm::AForm(std::string name, unsigned int signedGrade, unsigned int execGrade): _name(name)
 {
@@ -119,7 +123,7 @@ AForm::AForm(std::string name, unsigned int signedGrade, unsigned int execGrade)
 
 }
 
-AForm::AForm(): _name("Form")
+AForm::AForm()
 {
 	_signed = false;
 }

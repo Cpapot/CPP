@@ -16,8 +16,6 @@
 
 class AForm
 {
-protected:
-	std::string			_target;
 private:
 	const std::string	_name;
 	bool				_signed;
@@ -34,11 +32,12 @@ public:
 	unsigned int		getSignedGrade(void);
 	unsigned int		getExecGrade(void);
 	bool				isSigned(void);
-	const std::string	getName(void);
+	const std::string	getName(void) const;
+	void				setName(std::string);
 	void				setSignedGrade(unsigned int);
 	void				setExecGrade(unsigned int);
 
-	bool				checkBureaucratExec(Bureaucrat const & executor);
+	bool				checkBureaucratExec(Bureaucrat const & executor) const;
 	virtual void		execute(Bureaucrat const & executor) const = 0;
 	void				beSigned(Bureaucrat &signatory);
 };
