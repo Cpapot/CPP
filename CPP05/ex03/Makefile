@@ -17,6 +17,7 @@ LIST_SRC		=	main.cpp					\
 					ShrubberyCreationForm.cpp	\
 					RobotomyRequestForm.cpp		\
 					PresidentialPardonForm.cpp	\
+					Intern.cpp
 
 # ------------ DIRECTORIES ------------ #
 

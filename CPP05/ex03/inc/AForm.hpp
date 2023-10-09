@@ -25,7 +25,7 @@ public:
 	AForm(void);
 	AForm(std::string name);
 	AForm(std::string name, unsigned int signedGrade, unsigned int execGrade);
-	~AForm();
+	virtual ~AForm();
 
 	void				operator=(const AForm &);
 	friend				std::ostream&	operator<<(std::ostream& os, const AForm &src);
