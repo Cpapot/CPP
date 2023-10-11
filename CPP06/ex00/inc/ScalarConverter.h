@@ -1,31 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/11 12:23:50 by cpapot           ###   ########.fr       */
+/*   Created: 2023/10/11 12:03:51 by cpapot            #+#    #+#             */
+/*   Updated: 2023/10/11 12:06:24 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include <sstream>
-#include <stdexcept>
+#pragma once
 
-int main()
-{
-	std::string token = "2147483648";
-	int i;
-	try
-	{
-		i = convertInt(token);
-	}
-	catch(std::out_of_range const &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << i << std::endl;
-}
+#define INT_MAX	2147483647
+#define INT_MIN	-2147483648
+
