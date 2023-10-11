@@ -11,7 +11,8 @@ NAME		=	convert
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp
+LIST_SRC		=	main.cpp			\
+					StockType.cpp		
 
 # ------------ DIRECTORIES ------------ #
 
