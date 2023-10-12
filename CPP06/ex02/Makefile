@@ -11,8 +11,7 @@ NAME		=	convert
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp			\
-					Serializer.cpp
+LIST_SRC		=	main.cpp
 
 # ------------ DIRECTORIES ------------ #
 
