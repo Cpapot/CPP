@@ -12,7 +12,8 @@ NAME		=	convert
 # --------------- FILES --------------- #
 
 LIST_SRC		=	main.cpp			\
-					StockType.cpp		
+					StockType.cpp		\
+					ScalarConverter.cpp
 
 # ------------ DIRECTORIES ------------ #
 

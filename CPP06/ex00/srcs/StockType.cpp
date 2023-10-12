@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:52:28 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/11 16:45:15 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/12 12:49:12 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long		StockType::getLong()
 		return static_cast<long>(_charType);
 
 	case 2:
-		return static_cast<long>(_intType);
+		return static_cast<long>(_longType);
 
 	case 3:
 		return static_cast<long>(_doubleType);
@@ -52,7 +52,7 @@ double		StockType::getDouble()
 		return static_cast<double>(_charType);
 
 	case 2:
-		return static_cast<double>(_intType);
+		return static_cast<double>(_longType);
 
 	case 3:
 		return static_cast<double>(_doubleType);
@@ -73,7 +73,7 @@ float		StockType::getFloat()
 		return static_cast<float>(_charType);
 
 	case 2:
-		return static_cast<float>(_intType);
+		return static_cast<float>(_longType);
 
 	case 3:
 		return static_cast<float>(_doubleType);
@@ -94,7 +94,7 @@ int		StockType::getInt()
 		return static_cast<int>(_charType);
 
 	case 2:
-		return _intType;
+		return static_cast<int>(_longType);
 
 	case 3:
 		return static_cast<int>(_doubleType);
@@ -115,7 +115,7 @@ char		StockType::getChar()
 		return _charType;
 
 	case 2:
-		return static_cast<char>(_intType);
+		return static_cast<char>(_longType);
 
 	case 3:
 		return static_cast<char>(_doubleType);
