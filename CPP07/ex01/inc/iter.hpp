@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 14:56:21 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/13 15:38:37 by cpapot           ###   ########.fr       */
+/*   Created: 2023/10/13 15:41:31 by cpapot            #+#    #+#             */
+/*   Updated: 2023/10/13 16:05:33 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template<typename T>
-void	swap(T &first, T &second)
+template <typename T>
+void	iter(T *array, unsigned int size, void (*function)(const T &))
 {
-	T	tmp;
-
-	tmp = first;
-	first = second;
-	second = tmp;
+	for (unsigned int i = 0; i < size; i++)
+	{
+		function(array[i]);
+	}
 }
 
-template<typename T>
-T		min(const T& first, const T& second)
+template <typename T>
+void	printtab(const T & ok)
 {
-	if (first < second)
-		return (first);
-	else
-		return (second);
-}
-
-template<typename T>
-T		max(const T& first, const T& second)
-{
-	if (first > second)
-		return (first);
-	else
-		return (second);
+	std::cout << ok << std::endl;
 }

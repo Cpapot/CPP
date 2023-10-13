@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 14:56:21 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/12 15:12:37 by cpapot           ###   ########.fr       */
+/*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
+/*   Updated: 2023/10/13 16:50:17 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include <iostream>
+#include <string>
 
-template<typename T>
-void	swap(T *first, T *second)
+int main()
 {
-	T	tmp;
-
-	tmp = *first;
-	*first = *second;
-	*second = tmp;
-}
-
-template<typename T>
-T		min(const T& first, const T& second)
-{
-	if (first < second)
-		return (first);
-	else
-		return (second);
-}
-
-template<typename T>
-T		max(const T& first, const T& second)
-{
-	if (first > second)
-		return (first);
-	else
-		return (second);
+	int * a = new int();
+	std::cout << *a << std::endl;
 }

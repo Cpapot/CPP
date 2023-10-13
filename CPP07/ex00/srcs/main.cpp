@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/12 15:18:09 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/13 15:41:04 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 		std::string b = "non";
 
 		std::cout << "a: " << a << "	b: " << b << std::endl;
-		swap(&a, &b);
+		swap(a, b);
 		std::cout << "a: " << a << "	b: " << b << std::endl;
 	}
 	std::cout << "-----------------------------------------------" << std::endl;
@@ -29,7 +29,7 @@ int main()
 		int	a = 4; int b = 14;
 
 		std::cout << "a: " << a << "	b: " << b << std::endl;
-		swap(&a, &b);
+		swap(a, b);
 		std::cout << "a: " << a << "	b: " << b << std::endl;
 	}
 	std::cout << "-----------------------------------------------" << std::endl;
