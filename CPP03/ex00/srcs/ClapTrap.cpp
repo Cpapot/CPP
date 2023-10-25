@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:52:06 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/18 14:57:36 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/25 14:40:55 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
+ClapTrap::ClapTrap(const ClapTrap &cpy)
+{
+	*this = cpy;
+}
+
 ClapTrap::ClapTrap(std::string Name, unsigned int Attack)
 {
 	_Name = Name;
@@ -77,4 +82,12 @@ ClapTrap::ClapTrap(std::string Name)
 ClapTrap::~ClapTrap()
 {
 	std::cout << "\033[1;32m[ClapTrap]\033[0m " << _Name << " deleted." << std::endl;
+}
+
+ClapTrap&	ClapTrap::operator=(ClapTrap const &src)
+{
+	this->_Attack = src._Attack;
+	this->_Energy = src._Energy;
+	this->_Health = src._Health;
+	this->_Name = src._Name;
 }
