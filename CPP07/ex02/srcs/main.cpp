@@ -6,13 +6,14 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/17 14:24:10 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/26 15:36:34 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <iostream>
 #include <Array.hpp>
+#include <Array.tpp>
 
 #define MAX_VAL 10
 int main(int, char**)
