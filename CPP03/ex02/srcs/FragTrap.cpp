@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FrapTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:51:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/18 14:35:58 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:29:05 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ FragTrap::FragTrap()
 FragTrap::~FragTrap()
 {
 	std::cout << "\033[1;31m[FragTrap]\033[0m " << _Name << " created." << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &cpy): ClapTrap()
+{
+	*this = cpy;
+}
+
+FragTrap&	FragTrap::operator=(FragTrap const &src)
+{
+	this->_Attack = src._Attack;
+	this->_Energy = src._Energy;
+	this->_Health = src._Health;
+	this->_Name = src._Name;
+	return (*this);
 }

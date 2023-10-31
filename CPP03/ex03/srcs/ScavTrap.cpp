@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:46:22 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/18 14:39:09 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:34:19 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ ScavTrap::ScavTrap(std::string Name)
 ScavTrap::~ScavTrap()
 {
 	std::clog << "\033[1;33m[ScavTrap]\033[0m " << _Name << " deleted." << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &cpy): ClapTrap()
+{
+	*this = cpy;
+}
+
+ScavTrap&	ScavTrap::operator=(ScavTrap const &src)
+{
+	this->_Attack = src._Attack;
+	this->_Energy = src._Energy;
+	this->_Health = src._Health;
+	this->_Name = src._Name;
+	return (*this);
 }

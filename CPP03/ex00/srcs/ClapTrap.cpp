@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:52:06 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/25 14:40:55 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:10:17 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const &src)
 	this->_Energy = src._Energy;
 	this->_Health = src._Health;
 	this->_Name = src._Name;
+	return (*this);
 }

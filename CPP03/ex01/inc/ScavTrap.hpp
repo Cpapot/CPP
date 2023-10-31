@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:14:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/17 14:45:47 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:19:35 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ class ScavTrap : public ClapTrap
 public:
 	ScavTrap(void);
 	ScavTrap(std::string Name);
-	~ScavTrap();
+	ScavTrap(const ScavTrap &cpy);
+
+	~ScavTrap(void);
+
+	ScavTrap&	operator=(ScavTrap const &src);
 
 	void	guardGate(void);
 };
