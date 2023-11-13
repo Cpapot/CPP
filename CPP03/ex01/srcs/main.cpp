@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:31:05 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/17 14:54:03 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:22:58 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 int	main(void)
 {
-	ScavTrap	scav("edge");
+	ScavTrap	test("edge");
 	ClapTrap	clap("la lune", 1);
 
+	ScavTrap scav(test);
 	clap.attack("edge");
 	scav.takeDamage(1);
 	scav.beRepaired(1);

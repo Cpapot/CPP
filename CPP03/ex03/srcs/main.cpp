@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:31:05 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/18 16:01:23 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 17:04:57 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(void)
 	DiamondTrap	Diamond("diamond");
 
 	Diamond.stats();
-	clap.stats();
 	scav.stats();
 	frag.stats();
 	Diamond.whoAmI();

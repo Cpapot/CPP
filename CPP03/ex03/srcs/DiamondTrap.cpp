@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:50:17 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/18 16:07:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/10/31 17:04:09 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,4 @@ DiamondTrap::~DiamondTrap()
 {
 	std::cout << "\033[1;36m[DiamondTrap]\033[0m " << _Name << " deleted." << std::endl;
 }
+
