@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:16:54 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/28 16:17:31 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:31:53 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,17 @@ Brain::~Brain()
 {
 	print();
 	std::cout << " deleted" << std::endl;
+}
+
+Brain::Brain(Brain const &copy)
+{
+	for (int i = 0; i != 100; i++)
+		this->_ideas[i] = copy._ideas[i];
+}
+
+Brain const	&Brain::operator=(Brain const &copy)
+{
+	for (int i = 0; i != 100; i++)
+		this->_ideas[i] = copy._ideas[i];
+	return (*this);
 }

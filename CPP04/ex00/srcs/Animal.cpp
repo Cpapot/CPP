@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:43:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/19 18:09:03 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 10:59:23 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	Animal::printType(std::string str) const
 void	Animal::makeSound(void) const
 {
 	this->printType(_type);
-	std::cout << _sound << std::endl;
+	std::cout << "*unidentified animal noise*" << std::endl;
 }
 
 std::string	Animal::getType(void) const
@@ -31,7 +31,6 @@ std::string	Animal::getType(void) const
 Animal::Animal()
 {
 	_type = "unidentified animal";
-	_sound = "*unidentified animal noise*";
 	this->printType("Animal");
 	std::cout << " created." << std::endl;
 }
@@ -42,3 +41,13 @@ Animal::~Animal()
 	std::cout << " deleted (" << _type << ")." << std::endl;
 }
 
+Animal::Animal(Animal const &copy)
+{
+	this->_type = copy.getType();
+}
+
+Animal const	&Animal::operator=(Animal const &copy)
+{
+	this->_type = copy.getType();
+	return (*this);
+}

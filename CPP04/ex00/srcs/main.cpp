@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:28:18 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/19 18:05:00 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 10:57:59 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	main(void)
 	{
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
-		const Animal* i = new Cat();
+		const Animal* y = new Cat();
+		const Animal* i(y);
+
 
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:37:33 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/28 16:34:33 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:34:30 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Cat::Cat()
 {
 	Animal::_type = "Cat";
-	Animal::_sound = "*MIAOUU*";
 	Animal::_brain = new Brain();
 	this->printType("Cat");
 	_brain->set_idea(0, "I want to eat");
@@ -26,6 +25,12 @@ Cat::Cat()
 	std::cout << " created." << std::endl;
 }
 
+void		Cat::makeSound(void) const
+{
+	this->printType(_type);
+	std::cout << "*MIAOUU*" << std::endl;
+}
+
 Cat::~Cat()
 {
 	delete Animal::_brain;
@@ -33,3 +38,13 @@ Cat::~Cat()
 	std::cout << " deleted." << std::endl;
 }
 
+Cat::Cat(const Cat &cpy): Animal(cpy)
+{
+	_type = cpy._type;
+}
+
+Cat const		&Cat::operator=(const Cat &src)
+{
+	Animal::operator=(src);
+	return (*this);
+}

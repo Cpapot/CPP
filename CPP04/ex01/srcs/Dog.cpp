@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:00:02 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/28 16:32:23 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:09:34 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Dog::Dog()
 {
 	Animal::_type = "Dog";
-	Animal::_sound = "*WOAF*";
 	Animal::_brain = new Brain();
 	_brain->set_idea(0, "I want to eat");
 	_brain->set_idea(1, "I want to poo");
@@ -31,4 +30,21 @@ Dog::~Dog()
 	delete Animal::_brain;
 	this->printType("Dog");
 	std::cout << " deleted." << std::endl;
+}
+
+Dog::Dog(const Dog &cpy): Animal(cpy)
+{
+	_type = cpy._type;
+}
+
+void		Dog::makeSound(void) const
+{
+	this->printType(_type);
+	std::cout << "*WOAF*" << std::endl;
+}
+
+Dog const		&Dog::operator=(const Dog &src)
+{
+	Animal::operator=(src);
+	return (*this);
 }

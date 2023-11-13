@@ -16,7 +16,7 @@ LIST_SRC		=	main.cpp		\
 					Cure.cpp		\
 					Character.cpp	\
 					AMateria.cpp	\
-					
+
 
 # ------------ DIRECTORIES ------------ #
 
@@ -35,6 +35,8 @@ SRC                =    $(addprefix $(DIR_SRC),$(LIST_SRC))
 CPPFLAGS        =    -Wall -Wextra -Werror -std=c++98 -g
 
 DEP_FLAGS        =    -MMD -MP
+
+CXX              =    c++
 
 # -------------  COMMANDS ------------- #
 

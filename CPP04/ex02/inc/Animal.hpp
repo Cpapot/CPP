@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:29:43 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/28 17:08:13 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:32:43 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Animal
 {
 protected:
-	std::string	_sound;
 	std::string	_type;
+	Animal(Animal const &copy);
 	Brain		*_brain;
 public:
 	Animal(void);
@@ -31,6 +31,8 @@ public:
 	virtual void		useBrain(int index) = 0;
 	void				printType(std::string str) const;
 	virtual void		makeSound(void) const = 0;
+
+	Animal const	&operator=(Animal const &copy);
 };
 
 #endif

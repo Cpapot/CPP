@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:43:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/19 18:08:26 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/13 11:04:34 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	WrongAnimal::printType(std::string str) const
 void	WrongAnimal::makeSound(void) const
 {
 	this->printType(_type);
-	std::cout << _sound << std::endl;
+	std::cout << "*unidentified Animal noise*" << std::endl;
 }
 
 std::string	WrongAnimal::getType(void) const
@@ -31,7 +31,6 @@ std::string	WrongAnimal::getType(void) const
 WrongAnimal::WrongAnimal()
 {
 	_type = "unidentified Animal";
-	_sound = "*unidentified Animal noise*";
 	this->printType("WrongAnimal");
 	std::cout << " created." << std::endl;
 }
