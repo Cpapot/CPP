@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:29:43 by cpapot            #+#    #+#             */
-/*   Updated: 2023/11/13 11:32:43 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/18 04:20:28 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ class Animal
 {
 protected:
 	std::string	_type;
-	Animal(Animal const &copy);
-	Brain		*_brain;
 public:
 	Animal(void);
+	Animal(Animal const &copy);
 	virtual ~Animal();
 
 	std::string			getType(void) const;

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:43:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/11/13 11:33:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/18 04:22:29 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,6 @@ void	Animal::makeSound(void) const
 {
 	this->printType(_type);
 	std::cout << "*unidentified animal noise*" << std::endl;
-}
-
-void	Animal::setBrain(int index, std::string const &idea)
-{
-	if (_brain == NULL)
-		std::cout << "This animal as no brain" << std::endl;
-	else
-		_brain->set_idea(index, idea);
-}
-void	Animal::useBrain(int index)
-{
-	this->printType("BRAIN");
-	if (_brain == NULL)
-		std::cout << "This animal as no brain" << std::endl;
-	else
-		std::cout << _brain->get_idea(index) << std::endl;
 }
 
 Animal::Animal(Animal const &copy)
