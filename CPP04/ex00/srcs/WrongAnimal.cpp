@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:43:27 by cpapot            #+#    #+#             */
-/*   Updated: 2023/11/18 16:18:12 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/18 14:43:22 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,3 @@ WrongAnimal const	&WrongAnimal::operator=(WrongAnimal const &copy)
 	this->_type = copy.getType();
 	return (*this);
 }
-➜  e

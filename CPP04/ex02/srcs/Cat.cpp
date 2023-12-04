@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:37:33 by cpapot            #+#    #+#             */
-/*   Updated: 2023/11/18 04:22:57 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/04 09:38:15 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ Cat::Cat(const Cat &cpy): Animal(cpy)
 Cat const		&Cat::operator=(const Cat &src)
 {
 	Animal::operator=(src);
+	delete _brain;
 	_brain = new Brain(*src._brain);
 	return (*this);
 }

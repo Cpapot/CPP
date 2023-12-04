@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:36:43 by cpapot            #+#    #+#             */
-/*   Updated: 2023/09/19 18:07:13 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/18 14:47:31 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ class WrongCat : public WrongAnimal
 public:
 	WrongCat(void);
 	~WrongCat();
+	WrongCat(const WrongCat &cpy);
+
+	WrongCat const		&operator=(const WrongCat &src);
+
+
 };
 
 #endif

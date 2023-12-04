@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:00:02 by cpapot            #+#    #+#             */
-/*   Updated: 2023/11/18 04:16:16 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/04 09:39:41 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void		Dog::makeSound(void) const
 Dog const		&Dog::operator=(const Dog &src)
 {
 	Animal::operator=(src);
+	delete _brain;
 	_brain = new Brain(*src._brain);
 	return (*this);
 }

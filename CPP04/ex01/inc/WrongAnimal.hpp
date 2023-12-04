@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:44:18 by cpapot            #+#    #+#             */
-/*   Updated: 2023/11/13 11:21:59 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/11/18 14:46:42 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ protected:
 	std::string	_type;
 public:
 	WrongAnimal(void);
+	WrongAnimal(WrongAnimal const &copy);
+
+	WrongAnimal const	&operator=(WrongAnimal const &copy);
+
 	virtual ~WrongAnimal();
 
 	std::string	getType(void) const;
