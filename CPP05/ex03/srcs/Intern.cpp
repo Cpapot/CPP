@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:27:44 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/09 09:27:54 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:06:36 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,17 @@ AForm*	Intern::makeForm(std::string formName, std::string target)
 	this->deleteForm(formMap, formName);
 	std::cout << "Intern creates " << formName << std::endl;
 	return (result);
+}
+
+Intern const	&Intern::operator=(const Intern &src)
+{
+	(void)src;
+	return *this;
+}
+
+Intern::Intern(const Bureaucrat &cpy)
+{
+	(void)cpy;
 }
 
 Intern::Intern()

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/06 15:22:15 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:39:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,13 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-		contrat.beSigned(compt);
+		try
+		{
+			contrat.beSigned(compt);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 }

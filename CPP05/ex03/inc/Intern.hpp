@@ -6,11 +6,12 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 19:19:54 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/09 09:27:36 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:05:57 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -20,12 +21,14 @@
 
 class Intern
 {
-private:
-	AForm	*formAdrss;
 public:
+	Intern(const Bureaucrat &cpy);
 	Intern(void);
 	AForm*	makeForm(std::string formName, std::string target);
 	~Intern();
 
+	Intern const	&operator=(const Intern &src);
 	void	deleteForm(std::map<std::string, AForm*> formMap, std::string formName);
 };
+
+#endif

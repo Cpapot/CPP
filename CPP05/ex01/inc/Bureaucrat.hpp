@@ -6,14 +6,15 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/06 14:09:05 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:45:30 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-#include <string>
-#include <iostream>
+# include <string>
+# include <iostream>
 
 class Bureaucrat
 {
@@ -33,4 +34,7 @@ public:
 	Bureaucrat				operator++(int);
 	Bureaucrat				operator--(void);
 	Bureaucrat				operator--(int);
+	Bureaucrat const		&operator=(const Bureaucrat &src);
 };
+
+#endif

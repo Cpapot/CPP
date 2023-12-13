@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/09 09:28:49 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:01:32 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int main()
 
 
 	rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
-	rrf->execute(boss);
+	rrf->beSigned(boss);
+	boss.executeForm(*rrf);
 	delete rrf;
 	}
 }

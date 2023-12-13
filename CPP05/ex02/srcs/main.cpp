@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/07 19:14:32 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 16:43:27 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int main()
 		employee.executeForm(tree);
 		tree.beSigned(employee);
 		employee.executeForm(tree);
-		employee.executeForm(Robot);
+		Robot.beSigned(employee);
+		boss.executeForm(Robot);
 		std::cout << employee << std::endl;
 		for (int i = 0; i != 25; i++)
 			employee++;

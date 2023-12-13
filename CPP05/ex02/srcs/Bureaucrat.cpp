@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:08:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/07 18:53:24 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/13 16:17:16 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,13 @@ Bureaucrat		Bureaucrat::operator++()
 		throw std::invalid_argument("Bureaucrat::GradeTooHighException");
 	else
 		_grade--;
+	return (*this);
+}
+
+Bureaucrat const	&Bureaucrat::operator=(const Bureaucrat &src)
+{
+	this->~Bureaucrat();
+	new(this) Bureaucrat(src);
 	return (*this);
 }
 
