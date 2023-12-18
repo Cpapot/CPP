@@ -6,11 +6,12 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:56:21 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/13 15:38:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/18 15:03:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 template<typename T>
 void	swap(T &first, T &second)
@@ -39,3 +40,5 @@ T		max(const T& first, const T& second)
 	else
 		return (second);
 }
+
+#endif

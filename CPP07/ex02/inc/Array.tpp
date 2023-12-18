@@ -6,9 +6,12 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:36:29 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/26 15:36:23 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/18 15:25:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ARRAY_TPP
+# define ARRAY_TPP
 
 #include "Array.hpp"
 
@@ -54,6 +57,7 @@ Array<T>::Array()
 	size = 0;
 	std::cout << "NULL array created" << std::endl;
 }
+
 template <typename T>
 Array<T>::Array(const Array &cpy)
 {
@@ -77,3 +81,13 @@ Array<T>::Array(unsigned int n)
 	_size = n;
 	_array = tab;
 }
+
+template <typename T>
+void	Array<T>::print()
+{
+	for (unsigned int i = 0; i != _size; i++)
+		std::cout << i << ": " << _array[i] << std::endl;
+	std::cout << std::endl;
+}
+
+#endif
