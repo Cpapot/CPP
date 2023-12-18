@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/12 14:49:18 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/18 14:03:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,25 @@ Base* generate(void)
 void identify(Base& p)
 {
 	if (dynamic_cast<A*>(&p) != NULL)
-		std::cout << "[identify] Base is an A base" << std::endl;
+		std::cout << "[identify (Base&)] Base is an A base" << std::endl;
 	else if (dynamic_cast<B*>(&p) != NULL)
-		std::cout << "[identify] Base is an B base" << std::endl;
+		std::cout << "[identify (Base&)] Base is an B base" << std::endl;
 	else if (dynamic_cast<C*>(&p) != NULL)
-		std::cout << "[identify] Base is an C base" << std::endl;
+		std::cout << "[identify (Base&)] Base is an C base" << std::endl;
 	else
-		std::cout << "[identify] Cant find type" << std::endl;
+		std::cout << "[identify (Base&)] Cant find type" << std::endl;
 }
 
 void identify(Base* p)
 {
 	if (dynamic_cast<A*>(p) != NULL)
-		std::cout << "[identify] Base is an A base" << std::endl;
+		std::cout << "[identify (Base*)] Base is an A base" << std::endl;
 	else if (dynamic_cast<B*>(p) != NULL)
-		std::cout << "[identify] Base is an B base" << std::endl;
+		std::cout << "[identify (Base*)] Base is an B base" << std::endl;
 	else if (dynamic_cast<C*>(p) != NULL)
-		std::cout << "[identify] Base is an C base" << std::endl;
+		std::cout << "[identify (Base*)] Base is an C base" << std::endl;
 	else
-		std::cout << "[identify] Cant find type" << std::endl;
+		std::cout << "[identify (Base*)] Cant find type" << std::endl;
 }
 
 int main()

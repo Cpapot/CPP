@@ -33,6 +33,8 @@ CPPFLAGS        =    -Wall -Wextra -Werror -std=c++98 -g
 
 DEP_FLAGS        =    -MMD -MP
 
+CXX              =    c++
+
 # -------------  COMMANDS ------------- #
 
 RM                =    rm -rf

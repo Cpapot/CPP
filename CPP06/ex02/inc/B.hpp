@@ -6,15 +6,17 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:05:26 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/12 14:06:35 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/18 14:03:32 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef B_HPP
+# define B_HPP
 
-#include "Base.hpp"
+# include "Base.hpp"
 
 class B: public Base
 {
 };
 
+#endif

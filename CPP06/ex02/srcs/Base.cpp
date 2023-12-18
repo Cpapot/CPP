@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.h                                             :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 13:07:02 by cpapot            #+#    #+#             */
-/*   Updated: 2023/12/18 13:53:58 by cpapot           ###   ########.fr       */
+/*   Created: 2023/12/18 13:59:42 by cpapot            #+#    #+#             */
+/*   Updated: 2023/12/18 14:00:28 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#include "Base.hpp"
 
-# include <string>
-
-typedef struct s_Data
+Base::~Base()
 {
-	std::string		name;
-	unsigned int	id;
-}	Data;
-
-#endif
+	std::cout << "Base destroyed" << std::endl;
+}

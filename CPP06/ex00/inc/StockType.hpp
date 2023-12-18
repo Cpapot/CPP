@@ -6,13 +6,14 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:32:59 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/11 16:44:27 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/18 13:50:10 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef STOCKTYPE_HPP
+# define STOCKTYPE_HPP
 
-#include <string>
+# include <string>
 
 enum
 {
@@ -50,3 +51,6 @@ public:
 	void			setToken(std::string);
 	std::string		getToken(void);
 };
+
+
+#endif

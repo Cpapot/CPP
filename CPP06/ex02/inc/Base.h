@@ -6,12 +6,15 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:11:59 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/12 14:14:52 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/12/18 14:03:30 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BASE_H
+# define BASE_H
 
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+# include "A.hpp"
+# include "B.hpp"
+# include "C.hpp"
+
+#endif
