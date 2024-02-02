@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 12:44:25 by cpapot            #+#    #+#             */
-/*   Updated: 2023/10/12 12:44:59 by cpapot           ###   ########.fr       */
+/*   Updated: 2024/02/02 12:15:22 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,14 +110,14 @@ int		ScalarConverter::find_type(std::string token)
 {
 	bool	containf = (token.find_first_of("f") == token.size() - 1);
 
+	if (token.size() == 1 && token.find_first_not_of("0123456789") != token.npos)
+		return (CHAR);
 	if (token.find_first_not_of("0123456789.f") != token.npos && !isSpecialValue(token))
 		return (0);
 	if ((!token.compare("-inf") || !token.compare("+inf") || !token.compare("nan")))
 		return (DOUBLE);
 	else if ((!token.compare("-inff") || !token.compare("+inff") || !token.compare("nanf")))
 		return (FLOAT);
-	if (token.size() == 1 && token.find_first_not_of("0123456789") != token.npos)
-		return (CHAR);
 	if (token.at(0) == '-')
 		token.erase(0, 1);
 	if (token.find_first_not_of("0123456789") == token.npos && !containf)

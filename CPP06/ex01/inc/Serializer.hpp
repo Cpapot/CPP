@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 12:51:12 by cpapot            #+#    #+#             */
-/*   Updated: 2023/12/18 13:54:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2024/02/02 12:17:26 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Serializer
 public:
 	static uintptr_t serialize(Data* ptr);
 	static Data* deserialize(uintptr_t raw);
+
+	Serializer(void);
 };
 
 #endif

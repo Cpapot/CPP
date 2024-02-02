@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:32:30 by cpapot            #+#    #+#             */
-/*   Updated: 2023/12/18 14:03:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2024/02/02 12:31:19 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,39 @@ Base* generate(void)
 	return (result);
 }
 
+void	id_ref(Base& p, int step)
+{
+	try
+	{
+		switch (step)
+		{
+		case 0:
+			dynamic_cast<A&>(p);
+			std::cout << "[identify (Base&)] Base is an A base" << std::endl;
+			break;
+		case 1:
+			dynamic_cast<B&>(p);
+			std::cout << "[identify (Base&)] Base is an B base" << std::endl;
+			break;
+		case 2:
+			dynamic_cast<C&>(p);
+			std::cout << "[identify (Base&)] Base is an C base" << std::endl;
+			break;
+
+		default:
+			std::cout << "[identify (Base&)] Base not found" << std::endl;
+			break;
+		}
+	}
+	catch(const std::exception& e)
+	{
+		id_ref(p, step + 1);
+	}
+}
+
 void identify(Base& p)
 {
-	if (dynamic_cast<A*>(&p) != NULL)
-		std::cout << "[identify (Base&)] Base is an A base" << std::endl;
-	else if (dynamic_cast<B*>(&p) != NULL)
-		std::cout << "[identify (Base&)] Base is an B base" << std::endl;
-	else if (dynamic_cast<C*>(&p) != NULL)
-		std::cout << "[identify (Base&)] Base is an C base" << std::endl;
-	else
-		std::cout << "[identify (Base&)] Cant find type" << std::endl;
+	id_ref(p, 0);
 }
 
 void identify(Base* p)
