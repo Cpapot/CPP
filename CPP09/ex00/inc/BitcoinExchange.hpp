@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:37:00 by cpapot            #+#    #+#             */
-/*   Updated: 2024/01/04 16:07:28 by cpapot           ###   ########.fr       */
+/*   Updated: 2024/02/05 14:48:08 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,18 @@
 
 # include <iostream>
 # include <string>
+# include <map>
+# include <sstream>
+# include <math.h>
 # include <fstream>
+# include <unistd.h>
+
+struct s_info
+{
+	std::string	date;
+	int			value;
+};
+
 
 class CouldNotOpen: public std::exception
 {
@@ -35,6 +46,15 @@ public:
 	}
 };
 
+class notPositve: public std::exception
+{
+public:
+	virtual const char* what() const throw()
+	{
+		return "Not a postive number.";
+	}
+};
+
 class InvalidValue: public std::exception
 {
 public:
@@ -47,43 +67,63 @@ public:
 class BitcoinExchange
 {
 private:
-	std::ifstream	_inStream;
-	bool			_isFinish;
+	std::ifstream					_inStream;
+	bool							_isFinish;
+	std::map<std::string, int>		_container;
 public:
 	BitcoinExchange(int argc, char **argv);
 
 	~BitcoinExchange();
 
-	void	readLine(void);
-	bool	checkDate(std::string date);
-	bool	checkValue(std::string value);
+	s_info		readLine(void);
+	std::string	checkDate(std::string date);
+	int			checkValue(std::string value);
+	void		fillContainer();
 };
 
-bool	BitcoinExchange::checkValue(std::string value)
+void		BitcoinExchange::fillContainer()
 {
-	float	price = strtod(value.c_str(), NULL);
-	if (price < 0 || price > 1000)
-		return (false);
-	return (true);
+	s_info	tmp;
+	while (!_isFinish)
+	{
+		tmp = readLine();
+		if (_isFinish)
+			break;
+		_container[tmp.date] = tmp.value;
+		std::cout << tmp.date << " => " << tmp.value << " = " << "ok" << std::endl;
+	}
+	_inStream.close();
 }
 
-bool	BitcoinExchange::checkDate(std::string date)
+int	BitcoinExchange::checkValue(std::string value)
+{
+	float	price = strtod(value.c_str(), NULL);
+	if (fmod(price, 1) != 0)
+		throw (InvalidValue());
+	else if (price < 0)
+		throw (notPositve());
+	else if (price > 10000)
+		throw (InvalidValue());
+	return ((int)price);
+}
+
+std::string	BitcoinExchange::checkDate(std::string date)
 {
 	std::string number = "0123456789";
 
-	for (int i = 0; i != date.length(); i++)
+	for (size_t i = 0; i != date.length(); i++)
 	{
-		for (int y = 0; y != number.length(); y++)
+		for (size_t y = 0; y != number.length(); y++)
 		{
-			if (date[i] == number[y] || date[i] == '-')
+			if (date[i] == number[y] || date[i] == '-' || date[i] == ' ')
 				break;
 			if (y == number.length() - 1)
-				return (false);
+				throw (InvalidDate());
 		}
 	}
-	int year = stoi(date.substr(0, 4), NULL, 10);
-	int month = stoi(date.substr(5, 2), NULL, 10);
-	int day = stoi(date.substr(8, 2), NULL, 10);
+	int year = strtod(date.substr(0, 4).c_str(), NULL);
+	int month = strtod(date.substr(5, 2).c_str(), NULL);
+	int day = strtod(date.substr(8, 2).c_str(), NULL);
 	int monthSize[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	if (year % 4 == 0)
@@ -98,23 +138,27 @@ bool	BitcoinExchange::checkDate(std::string date)
 	}
 
 	if (month == 0 || month > 12 || day > monthSize[month] || day == 0)
-		return (false);
-	return (true);
+		throw (InvalidDate());
+	std::stringstream	result;
+	result << year << "-" << month << "-" << day;
+	return (result.str());
 }
 
-void	BitcoinExchange::readLine(void)
+s_info	BitcoinExchange::readLine(void)
 {
+	s_info		result;
 	std::string	date;
 	std::string	value;
 
 	if (!getline(_inStream, date, '|'))
 		_isFinish = true;
-	if (!checkDate(date))
-		throw (InvalidDate());
+	else
+		result.date = checkDate(date);
 	if (!getline(_inStream, value))
 		_isFinish = true;
-	if (!checkValue(value))
-		throw (InvalidValue());
+	else
+		result.value = checkValue(value);
+	return (result);
 }
 
 BitcoinExchange::BitcoinExchange(int argc, char **argv)
@@ -125,6 +169,7 @@ BitcoinExchange::BitcoinExchange(int argc, char **argv)
 	if (!_inStream)
 		throw (CouldNotOpen());
 	_isFinish = false;
+	fillContainer();
 }
 
 BitcoinExchange::~BitcoinExchange()
