@@ -11,7 +11,8 @@ NAME		=	btc
 
 # --------------- FILES --------------- #
 
-LIST_SRC		=	main.cpp
+LIST_SRC		=	main.cpp		\
+					BitcoinExchange.cpp
 
 # ------------ DIRECTORIES ------------ #
 
