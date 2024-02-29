@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:37:00 by cpapot            #+#    #+#             */
-/*   Updated: 2024/02/29 04:40:01 by cpapot           ###   ########.fr       */
+/*   Updated: 2024/02/29 04:42:16 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,14 @@ private:
 	std::map<std::string, float>	_container;
 public:
 	BitcoinExchange(std::string file);
-
+	BitcoinExchange const		&operator=(const BitcoinExchange &src);
+	BitcoinExchange(const BitcoinExchange &cpy);
 	~BitcoinExchange();
 
 	void		checkInput(int argc, char **argv);
 	s_info		readLineData(void);
 	std::string	checkDate(std::string date);
-	float			checkValue(std::string value);
+	float		checkValue(std::string value);
 	void		fillContainer();
 	void		printData();
 	s_info		readLineInput();

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:36:50 by cpapot            #+#    #+#             */
-/*   Updated: 2024/02/29 04:40:14 by cpapot           ###   ########.fr       */
+/*   Updated: 2024/02/29 04:49:30 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,16 @@ std::string	BitcoinExchange::checkDate(std::string date)
 s_info	BitcoinExchange::readLineData(void)
 {
 	s_info		result;
+	static bool skipFirstLine = false;
 	std::string	date;
 	std::string	value;
 
+
+	if (!skipFirstLine)
+	{
+		getline(_inStream, date);
+		skipFirstLine = true;
+	}
 	if (!getline(_inStream, date, ','))
 		_isFinish = true;
 	else
@@ -153,6 +160,19 @@ void		BitcoinExchange::checkInput(int argc, char **argv)
 		printInfo(value);
 	}
 	_inStream.close();
+}
+
+BitcoinExchange const		&BitcoinExchange::operator=(const BitcoinExchange &src)
+{
+	_container = src._container;
+	_isFinish = true;
+	return (*this);
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &cpy)
+{
+	_container = cpy._container;
+	_isFinish = true;
 }
 
 BitcoinExchange::~BitcoinExchange()
