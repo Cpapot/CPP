@@ -43,40 +43,33 @@ void	computeRes(std::string input)
 			stack.push(std::atoi(std::string(1, input[i]).c_str()));
 		else if (isSign(input[i]))
 		{
-			int *tab;
+			int b = stack.top();
+			stack.pop();
+			int a = stack.top();
+			stack.pop();
 			switch (input[i])
 			{
-			case '+':
-				tab = getNb(stack);
-				stack.push(tab[0] + tab[1]);
-				break;
-
-			case '-':
-				tab = getNb(stack);
-				stack.push(tab[1] - tab[0]);
-				break;
-
-			case '/':
-				tab = getNb(stack);
-				if (tab[0] == 0)
-				{
-					std::cout << "error" << std::endl;
-					delete tab;
-					return ;
-				}
-				stack.push(tab[0] / tab[1]);
-				break;
-
-			case '*':
-				tab = getNb(stack);
-				stack.push(tab[0] * tab[1]);
-				break;
+				case '+' : stack.push(a + b);
+					break;
+				case '-' : stack.push(a - b);
+					break;
+				case '*' : stack.push(a * b);
+					break;
+				case '/' :
+					if (b == 0)
+					{
+						std::cout << "error" << std::endl;
+						return ;
+					}
+					stack.push(a / b);
+					break;
 			}
-			delete tab;
 		}
 	}
 	if (stack.size() == 1 )
 		std::cout << stack.top() << std::endl;
+	else
+		std::cout << "error" << std::endl;
 }
 
 bool parseArg(std::string input)
